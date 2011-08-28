@@ -1,0 +1,184 @@
+/*
+* jQuery Mobile Framework
+* Copyright (c) jQuery Project
+* Dual licensed under the MIT (MIT-LICENSE.txt) and GPL (GPL-LICENSE.txt) licenses.
+*/
+
+/* 
+ * Custom generated themes for jQuery Mobile (http://jquery.org/license)
+ * Based on the default theme provided by jQuery Mobile
+ * Not part of the standard jQuery Mobile distribution
+ */
+
+/* g
+-----------------------------------------------------------------------------------------------------------*/
+
+.ui-bar-g {
+	border: 1px solid 		#000000;
+	background: 			#CD0707;
+	color: 					#FFFFFF;
+	font-weight: bold;
+	text-shadow: 0 0 0 #000;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#A20303), to(#CD0707)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #A20303, #CD0707); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient(top, #A20303, #CD0707); /* FF3.6 */
+	background-image:     -ms-linear-gradient(top, #A20303, #CD0707); /* IE10 */
+	background-image:      -o-linear-gradient(top, #A20303, #CD0707); /* Opera 11.10+ */
+	background-image:         linear-gradient(top, #A20303, #CD0707);
+}
+.ui-bar-g, 
+.ui-bar-g input, 
+.ui-bar-g select, 
+.ui-bar-g textarea, 
+.ui-bar-g button {
+	font-family: Helvetica, Arial, sans-serif;
+}
+.ui-bar-g .ui-link-inherit {
+	color: 					#FFFFFF;
+}
+.ui-bar-g .ui-link {
+	color: 					#FFFFFF;
+	font-weight: bold;
+}
+.ui-body-g {
+	background: 			#A5A4A4;
+	color: 					#414141;
+	text-shadow: 0 0 0 	#000;
+	font-weight: normal;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#E2E2E2), to(#A5A4A4)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #E2E2E2, #A5A4A4); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient(top, #E2E2E2, #A5A4A4); /* FF3.6 */
+	background-image:     -ms-linear-gradient(top, #E2E2E2, #A5A4A4); /* IE10 */
+	background-image:      -o-linear-gradient(top, #E2E2E2, #A5A4A4); /* Opera 11.10+ */
+	background-image:         linear-gradient(top, #E2E2E2, #A5A4A4);
+}
+.ui-body-g,
+.ui-body-g input,
+.ui-body-g select,
+.ui-body-g textarea,
+.ui-body-g button {
+	font-family: Helvetica, Arial, sans-serif;
+}
+.ui-body-g .ui-link-inherit {
+	color: 					#414141;
+}
+.ui-body-g .ui-link {
+	color: 					#2489CE;
+	font-weight: bold;
+}
+.ui-btn-up-g {
+	border: 1px solid 		#A2A2A2;
+	background: 			#A40101;
+	font-weight: bold;
+	color: 					#FFFFFF;
+	text-shadow: 0 0 0 #000;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#BC0404), to(#A40101)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #BC0404, #A40101); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient(top, #BC0404, #A40101); /* FF3.6 */
+	background-image:     -ms-linear-gradient(top, #BC0404, #A40101); /* IE10 */
+	background-image:      -o-linear-gradient(top, #BC0404, #A40101); /* Opera 11.10+ */
+	background-image:         linear-gradient(top, #BC0404, #A40101);
+}
+.ui-btn-up-g a.ui-link-inherit {
+	color: 					#FFFFFF;
+}
+.ui-btn-hover-g {
+	border: 1px solid 		#000000;
+	background: 			#750909;
+	font-weight: bold;
+	color: 					#FFFFFF;
+	text-shadow: 0 0 0 #000;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#CA0606), to(#750909)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #CA0606, #750909); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient(top, #CA0606, #750909); /* FF3.6 */
+	background-image:     -ms-linear-gradient(top, #CA0606, #750909); /* IE10 */
+	background-image:      -o-linear-gradient(top, #CA0606, #750909); /* Opera 11.10+ */
+	background-image:         linear-gradient(top, #CA0606, #750909);
+}
+.ui-btn-hover-g a.ui-link-inherit {
+	color: 					#FFFFFF;
+}
+.ui-btn-down-g {
+	border: 1px solid 		#000000;
+	background: 			#D50000;
+	font-weight: bold;
+	color: 					#FFFFFF;
+	text-shadow: 0 0 0 #000;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#A10404), to(#D50000)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #A10404, #D50000); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient(top, #A10404, #D50000); /* FF3.6 */
+	background-image:     -ms-linear-gradient(top, #A10404, #D50000); /* IE10 */
+	background-image:      -o-linear-gradient(top, #A10404, #D50000); /* Opera 11.10+ */
+	background-image:         linear-gradient(top, #A10404, #D50000);
+}
+.ui-btn-down-g a.ui-link-inherit {
+	color: 					#FFFFFF;
+}
+.ui-btn-up-g,
+.ui-btn-hover-g,
+.ui-btn-down-g {
+	font-family: Helvetica, Arial, sans-serif;
+	text-decoration: none;
+}
+/* f
+-----------------------------------------------------------------------------------------------------------*/
+
+.ui-bar-f {
+	border: 1px solid 		transparent;
+	font-weight: bold;
+	text-shadow: 0 0 0 #000;
+}
+.ui-bar-f, 
+.ui-bar-f input, 
+.ui-bar-f select, 
+.ui-bar-f textarea, 
+.ui-bar-f button {
+	font-family: Helvetica, Arial, sans-serif;
+}
+.ui-bar-f .ui-link {
+	font-weight: bold;
+}
+.ui-body-f {
+	background: 			#6E0707;
+	color: 					#FFFFFF;
+	text-shadow: 0 0 0 	#000;
+	font-weight: normal;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#BF0613), to(#6E0707)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #BF0613, #6E0707); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient(top, #BF0613, #6E0707); /* FF3.6 */
+	background-image:     -ms-linear-gradient(top, #BF0613, #6E0707); /* IE10 */
+	background-image:      -o-linear-gradient(top, #BF0613, #6E0707); /* Opera 11.10+ */
+	background-image:         linear-gradient(top, #BF0613, #6E0707);
+}
+.ui-body-f,
+.ui-body-f input,
+.ui-body-f select,
+.ui-body-f textarea,
+.ui-body-f button {
+	font-family: Helvetica, Arial, sans-serif;
+}
+.ui-body-f .ui-link-inherit {
+	color: 					#FFFFFF;
+}
+.ui-body-f .ui-link {
+	color: 					#2489CE;
+	font-weight: bold;
+}
+.ui-btn-up-f {
+	font-weight: bold;
+	text-shadow: 0 0 0 #000;
+}
+.ui-btn-hover-f {
+	font-weight: bold;
+	text-shadow: 0 0 0 #000;
+}
+.ui-btn-down-f {
+	font-weight: bold;
+	text-shadow: 0 0 0 #000;
+}
+.ui-btn-up-f,
+.ui-btn-hover-f,
+.ui-btn-down-f {
+	font-family: Helvetica, Arial, sans-serif;
+	text-decoration: none;
+}

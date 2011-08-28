@@ -1,0 +1,28 @@
+<h4><%= @data["division"] %> Standings</h4>
+
+<%
+    #print seasons nav bar
+    unless @seasons.blank? %>
+        <div data-role="navbar">
+            <ul>
+                <%
+                for item in @seasons
+                    %>
+                    <li><a data-theme="a" <%= 'class=ui-btn-active' if item == @current_season %>><%= item.humanize %></a></li>
+                    <%
+                end
+                %>
+            </ul>
+        </div>
+
+        <%= render :partial => "partials/standings_table", :locals => { :data => @regular_standings, :season => "regular" } %>
+
+        <%= render :partial => "partials/standings_table", :locals => { :data => @playoff_standings, :season => "playoffs" } %>
+
+    <% else %>
+
+       <p>No Data Found</p>
+
+    <% end %>
+
+<p>&nbsp;</p>

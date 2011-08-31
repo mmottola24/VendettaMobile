@@ -1,6 +1,6 @@
 <% unless data.empty? %>
 
-    <table class="standings-<%= season %>">
+    <table class="info-table standings-<%= season %>" cellpadding="0" cellspacing="0">
         <tr>
             <th>Team</th>
             <th>GP</th>
@@ -12,10 +12,12 @@
             <th>GA</th>
         </tr>
         <%
+        i = 0
         data.each do |value|
            unless value.blank?
+                row_class = (i % 2 == 0) ? 'odd' : 'even'
                 %>
-                <tr>
+                <tr class="<%=row_class%>">
                     <td><%= value['team_name'] %></td>
                     <td><%= value['gp'] %></td>
                     <td><%= value['w'] %></td>
@@ -26,6 +28,7 @@
                     <td><%= value['ga'] %></td>
                 </tr>
                 <%
+                i = i + 1
             end
         end
         %>

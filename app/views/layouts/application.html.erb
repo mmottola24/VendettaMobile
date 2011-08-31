@@ -8,14 +8,14 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <%= javascript_include_tag "modernizr-2.0.6" %>
-      <%= stylesheet_link_tag "jquery.mobile-1.0b2.min", "jquery.mobile-1.0b2.custom" %>
+      <%= stylesheet_link_tag "jquery.mobile-1.0b2.min", "jquery.mobile-1.0b2.custom", "stylesheet" %>
       <%= javascript_include_tag :defaults %>
       <%= csrf_meta_tag %>
 
     </head>
     <body>
 
-        <article data-role="page" data-title="<%= @title %>" data-theme="g">
+        <article id="page" data-role="page" data-title="<%= @title %>" data-theme="g">
 
             <header data-role="header" data-theme="g">
 

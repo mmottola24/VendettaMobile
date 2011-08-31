@@ -3,26 +3,61 @@
 <%
     #print seasons nav bar
     unless @seasons.blank? %>
-        <div data-role="navbar">
+        <nav data-role="navbar" class="season_toggle">
             <ul>
                 <%
                 for item in @seasons
                     %>
-                    <li><a data-theme="a" <%= 'class=ui-btn-active' if item == @current_season %>><%= item.humanize %></a></li>
+                    <li><a data-theme="a" data-season-type="<%= item %>" <%= 'class=ui-btn-active' if item == @current_season %>><%= item.humanize %></a></li>
                     <%
                 end
                 %>
             </ul>
-        </div>
+        </nav>
 
-        <%= render :partial => "partials/standings_table", :locals => { :data => @regular_standings, :season => "regular" } %>
+        <section class="data-list">
 
-        <%= render :partial => "partials/standings_table", :locals => { :data => @playoff_standings, :season => "playoffs" } %>
+            <article class="regular <%= ' data-list-active' if @current_season == 'regular' %>">
+                <%= render :partial => "partials/standings_table", :locals => { :data => @regular_standings, :season => "regular" } %>
+            </article>
+
+            <article class="playoffs <%= ' data-list-active' if @current_season == 'playoffs' %>">
+                <%= render :partial => "partials/standings_table", :locals => { :data => @playoff_standings, :season => "playoffs" } %>
+            </article>
+
+        </section>
 
     <% else %>
 
        <p>No Data Found</p>
 
     <% end %>
-
 <p>&nbsp;</p>
+
+<script>
+    $(function() {
+
+        $('#page').live('pagecreate', function(event) {
+           //alert('page create');
+        });
+
+        $('.data-list article').hide();
+
+        $('.data-list article.data-list-active').fadeIn();
+
+        $('.season_toggle ul li a').live('click',function(){
+
+            if ($(this).hasClass('ui-btn-active')) {
+                var seasonType = $(this).attr('data-season-type');
+
+                $('.data-list article').hide();
+                $('.data-list article.' + seasonType).fadeIn();
+            }
+
+        });
+
+    });
+
+
+
+</script>

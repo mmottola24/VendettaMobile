@@ -2972,7 +2972,7 @@ $.widget( "mobile.page", $.mobile.widget, {
 
 				// Some embedded browsers, like the web view in Phone Gap, allow cross-domain XHR
 				// requests if the document doing the request was loaded via the file:// protocol.
-				// This is usually to allow the application to "phone home" and fetch app specific
+				// This is usually to allow the application to "phone pages" and fetch app specific
 				// data. We normally let the browser handle external/cross-domain urls, but if the
 				// allowCrossDomainPages option is true, we will allow cross-domain http/https
 				// requests to go through our page loading logic.

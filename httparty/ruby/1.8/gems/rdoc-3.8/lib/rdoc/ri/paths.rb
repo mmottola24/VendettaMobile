@@ -42,7 +42,7 @@ module RDoc::RI::Paths
   #           true
   # :site:: Where ri for installed libraries are stored.  Yielded when
   #         +site+ is true.  Normally no ri data is stored here.
-  # :home:: ~/.rdoc.  Yielded when +home+ is true.
+  # :pages:: ~/.rdoc.  Yielded when +pages+ is true.
   # :gem:: ri data for an installed gem.  Yielded when +gems+ is true.
   # :extra:: ri data directory from the command line.  Yielded for each
   #          entry in +extra_dirs+
@@ -54,7 +54,7 @@ module RDoc::RI::Paths
 
     yield SYSDIR,  :system if system
     yield SITEDIR, :site   if site
-    yield HOMEDIR, :home   if home and HOMEDIR
+    yield HOMEDIR, :pages   if home and HOMEDIR
 
     gemdirs.each do |dir|
       yield dir, :gem

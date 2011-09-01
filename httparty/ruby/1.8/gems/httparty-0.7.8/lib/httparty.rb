@@ -252,7 +252,7 @@ module HTTParty
     #
     #   class Foo
     #     include HTTParty
-    #     pem File.read('/home/user/my.pem'), "optional password"
+    #     pem File.read('/pages/user/my.pem'), "optional password"
     #   end
     def pem(pem_contents, password=nil)
       default_options[:pem] = pem_contents

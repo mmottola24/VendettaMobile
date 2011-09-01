@@ -27,7 +27,7 @@
 
                 <%= yield %>
 
-                <%= render :partial => "partials/nav" %>
+                <%= render :partial => "partials/nav", :locals => { :page => @page } %>
 
             </section>
 

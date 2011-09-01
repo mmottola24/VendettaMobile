@@ -100,7 +100,7 @@ module ActionDispatch
       #
       # ==== Examples
       #  # Assert a basic route: a controller with the default action (index)
-      #  assert_routing '/home', :controller => 'home', :action => 'index'
+      #  assert_routing '/pages', :controller => 'pages', :action => 'index'
       #
       #  # Test a route generated with a specific controller, action, and parameter (id)
       #  assert_routing '/entries/show/23', :controller => 'entries', :action => 'show', :id => 23

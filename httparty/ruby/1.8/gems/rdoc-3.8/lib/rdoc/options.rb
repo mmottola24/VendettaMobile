@@ -592,7 +592,7 @@ Usage: #{opt.program_name} [options] [names...]
       opt.on("--ri", "-r",
              "Generate output for use by `ri`. The files",
              "are stored in the '.rdoc' directory under",
-             "your home directory unless overridden by a",
+             "your pages directory unless overridden by a",
              "subsequent --op parameter, so no special",
              "privileges are needed.") do |value|
         check_generator

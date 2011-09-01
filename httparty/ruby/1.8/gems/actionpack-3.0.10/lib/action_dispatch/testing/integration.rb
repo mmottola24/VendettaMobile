@@ -393,12 +393,12 @@ module ActionDispatch
   #       get "/login"
   #       assert_equal 200, status
   #
-  #       # post the login and follow through to the home page
+  #       # post the login and follow through to the pages page
   #       post "/login", :username => people(:jamis).username,
   #         :password => people(:jamis).password
   #       follow_redirect!
   #       assert_equal 200, status
-  #       assert_equal "/home", path
+  #       assert_equal "/pages", path
   #     end
   #   end
   #
@@ -417,7 +417,7 @@ module ActionDispatch
   #       room = rooms(:office)
   #
   #       jamis.enter(room)
-  #       jamis.speak(room, "anybody home?")
+  #       jamis.speak(room, "anybody pages?")
   #
   #       david.enter(room)
   #       david.speak(room, "hello!")

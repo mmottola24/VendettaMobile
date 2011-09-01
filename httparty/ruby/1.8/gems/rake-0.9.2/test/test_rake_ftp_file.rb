@@ -50,7 +50,7 @@ class TestRakeFtpFile < Rake::TestCase
   end
 
   def test_symlink
-    file = Rake::FtpFile.new(".", "lrwxrwxrwx   1 a279376  develop       64 Mar 26  2002 xtrac -> /home/a279376/working/ics/development/java/com/fmr/fwp/ics/xtrac")
+    file = Rake::FtpFile.new(".", "lrwxrwxrwx   1 a279376  develop       64 Mar 26  2002 xtrac -> /pages/a279376/working/ics/development/java/com/fmr/fwp/ics/xtrac")
     assert_equal 'xtrac', file.name
     assert file.symlink?
     assert !file.directory?

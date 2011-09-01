@@ -40,7 +40,7 @@
 #
 #   EDGE
 #     Set to "1" to indicate generated guides should be marked as edge. This
-#     inserts a badge and changes the preamble of the home page.
+#     inserts a badge and changes the preamble of the pages page.
 #
 # ---------------------------------------------------------------------------
 
@@ -130,7 +130,7 @@ module RailsGuides
         view.extend(Helpers)
 
         if guide =~ /\.html\.erb$/
-          # Generate the special pages like the home.
+          # Generate the special pages like the pages.
           result = view.render(:layout => 'layout', :file => guide)
         else
           body = File.read(File.join(source_dir, guide))

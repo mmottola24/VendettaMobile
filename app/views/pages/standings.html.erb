@@ -1,4 +1,4 @@
-<h4><%= @data["division"] %> Standings</h4>
+<h4><%= @current_division %> Standings</h4>
 
 <%
     #print seasons nav bar
@@ -36,10 +36,6 @@
 
 <script>
     $(function() {
-
-        $('#page').live('pagecreate', function(event) {
-           //alert('page create');
-        });
 
         $('.data-list article').hide();
 

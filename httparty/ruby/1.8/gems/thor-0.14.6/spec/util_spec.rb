@@ -145,8 +145,8 @@ describe Thor::Util do
     end
 
     it "returns HOME/.thor if set" do
-      ENV.stub!(:[]).with("HOME").and_return("/home/user/")
-      Thor::Util.user_home.should == "/home/user/"
+      ENV.stub!(:[]).with("HOME").and_return("/pages/user/")
+      Thor::Util.user_home.should == "/pages/user/"
     end
 
     it "returns path with HOMEDRIVE and HOMEPATH if set" do
@@ -156,8 +156,8 @@ describe Thor::Util do
     end
 
     it "returns APPDATA/.thor if set" do
-      ENV.stub!(:[]).with("APPDATA").and_return("/home/user/")
-      Thor::Util.user_home.should == "/home/user/"
+      ENV.stub!(:[]).with("APPDATA").and_return("/pages/user/")
+      Thor::Util.user_home.should == "/pages/user/"
     end
   end
 end

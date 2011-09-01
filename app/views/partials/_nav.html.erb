@@ -2,17 +2,29 @@
 
     <ul data-theme="a" data-role="listview">
 
-        <li><%= link_to "Home", :root %></li>
+        <% unless page == 'pages' %>
+            <li><%= link_to "Home", :root %></li>
+        <% end %>
 
-        <li><%= link_to "Standings", :standings  %></li>
+        <% unless page == 'standings' %>
+            <li><%= link_to "Standings", :standings  %></li>
+        <% end %>
 
-        <li><%= link_to "Team Schedule", :team_schedule  %></li>
+        <% unless page == 'team_schedule' %>
+            <li><%= link_to "Team Schedule", :team_schedule  %></li>
+        <% end %>
 
-        <li><%= link_to "League Schedule", :league_schedule %></li>
+        <% unless page == 'league_schedule' %>
+            <li><%= link_to "League Schedule", :league_schedule %></li>
+        <% end %>
 
-        <li><%= link_to "Team Stats", :team_stats %></li>
+        <% unless page == 'team_stats' %>
+            <li><%= link_to "Team Stats", :team_stats %></li>
+        <% end %>
 
-        <li><%= link_to "League Stats", :league_stats %></li>
+        <% unless page == 'league_stats' %>
+            <li><%= link_to "League Stats", :league_stats %></li>
+        <% end %>
 
     </ul>
 

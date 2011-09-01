@@ -23,7 +23,7 @@ class TestRDocRIDriver < MiniTest::Unit::TestCase
     ENV.delete 'RI'
 
     @options = RDoc::RI::Driver.process_args []
-    @options[:home] = @tmpdir
+    @options[:pages] = @tmpdir
     @options[:use_stdout] = true
     @options[:formatter] = @RM::ToRdoc
     @driver = RDoc::RI::Driver.new @options
@@ -75,7 +75,7 @@ class TestRDocRIDriver < MiniTest::Unit::TestCase
   def test_add_also_in
     util_multi_store
     @store1.type = :system
-    @store2.type = :home
+    @store2.type = :pages
 
     out = @RM::Document.new
 

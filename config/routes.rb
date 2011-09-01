@@ -3,7 +3,7 @@ VendettaMobile::Application.routes.draw do
   #Make homepage
   root :to => 'home#index'
 
-  match "standings" => "home#standings"
+  match "standings" => "standings#index"
   match "team_schedule" => "home#team_schedule"
   match "league_schedule" => "home#league_schedule"
   match "team_stats" => "home#team_stats"

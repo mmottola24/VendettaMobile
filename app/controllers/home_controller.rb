@@ -22,13 +22,6 @@ class HomeController < ApplicationController
     end
   end
 
-  def team_stats
-    @title = "Team Stats"
-    respond_to do |format|
-      format.html
-    end
-  end
-
   def league_stats
     @title = "League Stats"
     respond_to do |format|

@@ -4,9 +4,9 @@ VendettaMobile::Application.routes.draw do
   root :to => 'home#index'
 
   match "standings" => "standings#index"
-  match "team_schedule" => "home#team_schedule"
-  match "league_schedule" => "home#league_schedule"
-  match "team_stats" => "home#team_stats"
+  match "team_schedule" => "schedule#team#team_schedule"
+  match "league_schedule" => "schedule#index"
+  match "team_stats" => "team_stats#index"
   match "league_stats" => "home#league_stats"
 
   # The priority is based upon order of creation:

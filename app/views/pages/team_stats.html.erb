@@ -1,1 +1,57 @@
-<h1><%= @title %></h1>
+<%
+    #print seasons nav bar
+    unless @seasons.blank? %>
+        <nav data-role="navbar" class="season_toggle">
+            <ul>
+                <%
+                for item in @seasons
+                    %>
+                    <li><a data-theme="a" data-season-type="<%= item %>" <%= 'class=ui-btn-active' if item == @current_season %>><%= item.humanize %></a></li>
+                    <%
+                end
+                %>
+            </ul>
+        </nav>
+
+        <section class="data-list">
+
+            <article class="regular <%= ' data-list-active' if @current_season == 'regular' %>">
+                <%= render :partial => "partials/player_stats", :locals => { :data => @regular_stats, :season => "regular" } %>
+            </article>
+
+            <article class="playoffs <%= ' data-list-active' if @current_season == 'playoffs' %>">
+                <%= render :partial => "partials/player_stats", :locals => { :data => @playoff_stats, :season => "playoffs" } %>
+            </article>
+
+        </section>
+
+    <% else %>
+
+       <p>No Data Found</p>
+
+    <% end %>
+<p>&nbsp;</p>
+
+<script>
+    $(function() {
+
+        $('.data-list article').hide();
+
+        $('.data-list article.data-list-active').fadeIn();
+
+        $('.season_toggle ul li a').live('click',function(){
+
+            if ($(this).hasClass('ui-btn-active')) {
+                var seasonType = $(this).attr('data-season-type');
+
+                $('.data-list article').hide();
+                $('.data-list article.' + seasonType).fadeIn();
+            }
+
+        });
+
+    });
+
+
+
+</script>

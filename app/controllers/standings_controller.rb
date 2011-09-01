@@ -18,13 +18,17 @@ class StandingsController < ApplicationController
     end
 
     playoff_standings = Array.new
-    data['standings']['playoffs'].each do |key, value|
-      playoff_standings[key.to_i] = value
+    unless data['standings']['playoffs'].nil?
+      data['standings']['playoffs'].each do |key, value|
+        playoff_standings[key.to_i] = value
+      end
     end
 
     regular_standings = Array.new
-    data['standings']['regular'].each do |key, value|
-      regular_standings[key.to_i] = value
+    unless data['standings']['regular'].nil?
+      data['standings']['regular'].each do |key, value|
+        regular_standings[key.to_i] = value
+      end
     end
 
     @seasons = seasons

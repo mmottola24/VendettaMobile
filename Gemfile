@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'json'
 gem 'httparty'
 gem 'awesome_print'
+gem 'htmlentities'
 
 # Deploy with Capistrano
 # gem 'capistrano'

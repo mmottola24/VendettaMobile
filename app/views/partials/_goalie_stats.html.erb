@@ -1,0 +1,38 @@
+<% unless data.empty? %>
+
+    <table class="info-table goalie-stats-<%= season %>" cellpadding="0" cellspacing="0">
+        <tr>
+            <th>Goalie</th>
+            <th>GP</th>
+            <th>Record</th>
+            <th>MINS</th>
+            <th>GAA</th>
+            <th>SO</th>
+            <th>TGA</th>
+        </tr>
+        <%
+        i = 0
+        data.each do |value|
+           unless value.blank?
+                row_class = (i % 2 == 0) ? 'odd' : 'even'
+
+                name = value['goalie'].to_s.split ' '
+
+                %>
+                <tr class="<%=row_class%>">
+                    <td><%= HTMLEntities.new.decode name[1] + name[0] %></td>
+                    <td><%= value['gp'] %></td>
+                    <td><%= value['record'] %></td>
+                    <td><%= value['mins'] %></td>
+                    <td><%= value['gaa'] %></td>
+                    <td><%= value['so'] %></td>
+                    <td><%= value['tga'] %></td>
+                </tr>
+                <%
+                i = i + 1
+            end
+        end
+        %>
+    </table>
+
+<% end %>

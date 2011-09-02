@@ -1,1 +1,21 @@
 <h1><%= @title %></h1>
+
+<% unless @games.blank? %>
+
+    <ul data-role="listview" data-inset="true" class="team-schedule-list">
+
+      <% @games.each do |game| %>
+          <% unless game.nil? %>
+              <li>
+
+                <h3><%= game['away_team'] %> vs <%= game['home_team'] %></h3>
+                <p><b><%= game['date'] %></b></p>
+
+                 <p class="ui-li-aside"><strong><%= game['start_time'] %></strong><br>Rink <%= game['rink'] %></p>
+
+              </li>
+          <% end %>
+      <% end %>
+    </ul>
+
+<% end %>

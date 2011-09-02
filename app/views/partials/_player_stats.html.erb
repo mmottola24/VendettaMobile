@@ -16,9 +16,11 @@
         data.each do |value|
            unless value.blank?
                 row_class = (i % 2 == 0) ? 'odd' : 'even'
+
+                name = value['player'].to_s.split ','
                 %>
                 <tr class="<%=row_class%>">
-                    <td><%= HTMLEntities.new.decode value['player'].to_s %></td>
+                    <td><%= HTMLEntities.new.decode name[1] + name[0] %></td>
                     <td><%= value['gp'] %></td>
                     <td><%= value['g'] %></td>
                     <td><%= value['a'] %></td>

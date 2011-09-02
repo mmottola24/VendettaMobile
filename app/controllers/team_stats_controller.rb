@@ -17,18 +17,34 @@ class TeamStatsController < ApplicationController
       seasons.push 'playoffs'
     end
 
-    regular_stats = Array.new
+    #get regular season stats
+    regular_stats = Hash.new
     unless data['stats']['regular']['player'].nil?
+      player_stats = Array.new
       data['stats']['regular']['player'].each do |key, value|
-        regular_stats[key.to_i] = value
+        player_stats[key.to_i] = value
       end
+      goalie_stats = Array.new
+      data['stats']['regular']['goalie'].each do |key, value|
+        goalie_stats[key.to_i] = value
+      end
+      regular_stats[:player] = player_stats
+      regular_stats[:goalie] = goalie_stats
     end
 
-    playoff_stats = Array.new
+    #Get playoff stats
+    playoff_stats = Hash.new
     unless data['stats']['playoffs']['player'].nil?
+      player_stats = Array.new
       data['stats']['playoffs']['player'].each do |key, value|
-        playoff_stats[key.to_i] = value
+        player_stats[key.to_i] = value
       end
+      goalie_stats = Array.new
+      data['stats']['playoffs']['goalie'].each do |key, value|
+        goalie_stats[key.to_i] = value
+      end
+      playoff_stats[:player] = player_stats
+      playoff_stats[:goalie] = goalie_stats
     end
 
     @seasons = seasons

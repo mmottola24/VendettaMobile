@@ -28,7 +28,6 @@
     -webkit-box-shadow: inset 0 1px 3px #fff, inset 0 -1px #FD7B6D, 0 0 6px #FD7B6D;
     -moz-box-shadow: inset 0 1px 3px #fff, inset 0 -1px #FD7B6D, 0 0 6px #FD7B6D;
     width: 30px;
-
 }
 .info-table tr.even {
     background-color: #FDA69D;
@@ -36,4 +35,12 @@
 
 .info-table tr.odd {
     background-color: #FCE6E5;
+}
+
+.team-schedule-list li h3 {
+    margin:  0 0 6px 0;
+}
+ul.team-schedule-list li {
+    padding-top: 0;
+    padding-bottom: 0;
 }

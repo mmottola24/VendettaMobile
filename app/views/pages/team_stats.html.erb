@@ -16,11 +16,13 @@
         <section class="data-list">
 
             <article class="regular <%= ' data-list-active' if @current_season == 'regular' %>">
-                <%= render :partial => "partials/player_stats", :locals => { :data => @regular_stats, :season => "regular" } %>
+                <%= render :partial => "partials/player_stats", :locals => { :data => @regular_stats[:player], :season => "regular" } %>
+                <%= render :partial => "partials/goalie_stats", :locals => { :data => @regular_stats[:goalie], :season => "regular" } %>
             </article>
 
             <article class="playoffs <%= ' data-list-active' if @current_season == 'playoffs' %>">
-                <%= render :partial => "partials/player_stats", :locals => { :data => @playoff_stats, :season => "playoffs" } %>
+                <%= render :partial => "partials/player_stats", :locals => { :data => @playoff_stats[:player], :season => "playoffs" } %>
+                <%= render :partial => "partials/goalie_stats", :locals => { :data => @playoff_stats[:goalie], :season => "playoffs" } %>
             </article>
 
         </section>

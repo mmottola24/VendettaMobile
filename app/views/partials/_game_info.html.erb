@@ -1,0 +1,11 @@
+<% unless game.nil? %>
+  <li <%= 'class=paginate-hide' if i >= 5 %>>
+    <p class="time-details"><strong><%= game['start_time'] %></strong><br>Rink <%= game['rink'] %></p>
+
+    <h3><%= game['away_team'] %> vs <%= game['home_team'] %></h3>
+    <p><b><%= Time.parse(game['date']).strftime("%A %B %d, %G") %></b></p>
+
+  </li>
+  <%
+end
+%>

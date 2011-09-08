@@ -37,10 +37,24 @@
     background-color: #FCE6E5;
 }
 
-.team-schedule-list li h3 {
+.schedule-list li h3 {
     margin:  0 0 6px 0;
 }
-ul.team-schedule-list li {
+ul.schedule-list li {
     padding-top: 0;
     padding-bottom: 0;
+}
+
+ul.schedule-list li p.time-details {
+    float: right;
+    margin: 0.3em 0;
+    text-align: right;
+}
+
+.ui-li .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li {
+    padding-right: 20px;
+}
+
+.paginate-hide {
+    display: none !important;
 }

@@ -1,1 +1,59 @@
-<h1><%= @title %></h1>
+<% unless @games.blank? %>
+
+    <ul data-role="listview" data-inset="true" class="schedule-list" data-divider-theme="g">
+
+      <%
+         i = 0
+         @dates.each do |day|
+
+             %>
+             <li data-role="list-divider" role="heading" <%= 'class=paginate-hide' if i >= 5 %>><h2><%= Time.parse(day).strftime("%A %B %d, %G") %></h2></li>
+             <%
+
+             @games[day].each do |game| %>
+
+                <%= render :partial => "partials/game_info", :locals => { :i => i, :game => game } %>
+
+                <%
+
+             end
+
+             i = i + 1
+         end
+      %>
+    </ul>
+
+    <% if @dates.length > 5 %>
+        <button class="show-more" data-theme="c">Show More</button>
+    <% end %>
+
+<% end %>
+
+<script>
+
+    var totalShown = 5;
+    $('.show-more').click(function(){
+        var self = this;
+        var numHiddenFound = 0;
+        $('ul.schedule-list li.paginate-hide').each(function(index) {
+
+            if (numHiddenFound < 6) {
+
+
+                if ($(this).attr('data-role') == "list-divider") {
+                    numHiddenFound++;
+                    totalShown++;
+                }
+
+                if (numHiddenFound < 6) {
+                    $(this).removeClass('paginate-hide');
+                }
+
+                if (totalShown == '<%= @dates.length %>') {
+                    $(self).parent().hide();
+                }
+            }
+        });
+    });
+
+</script>

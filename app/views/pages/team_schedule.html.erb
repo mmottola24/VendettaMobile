@@ -1,21 +1,42 @@
-<h1><%= @title %></h1>
-
 <% unless @games.blank? %>
 
-    <ul data-role="listview" data-inset="true" class="team-schedule-list">
+    <ul data-role="listview" data-inset="true" class="schedule-list">
 
-      <% @games.each do |game| %>
-          <% unless game.nil? %>
-              <li>
+      <%
+         i = 0
+         @games.each do |game| %>
 
-                <h3><%= game['away_team'] %> vs <%= game['home_team'] %></h3>
-                <p><b><%= game['date'] %></b></p>
+            <%= render :partial => "partials/game_info", :locals => { :i => i, :game => game } %>
 
-                 <p class="ui-li-aside"><strong><%= game['start_time'] %></strong><br>Rink <%= game['rink'] %></p>
-
-              </li>
-          <% end %>
-      <% end %>
+            <%
+            i = i + 1
+         end %>
     </ul>
 
+    <% if @games.length > 5 %>
+        <button class="show-more" data-theme="c">Show More</button>
+    <% end %>
+
 <% end %>
+
+<script>
+
+    var totalShown = 5;
+    $('.show-more').click(function(){
+        var self = this;
+        var numHiddenFound = 0;
+        $('ul.schedule-list li.paginate-hide').each(function(index) {
+
+            if (numHiddenFound < 5) {
+                $(this).removeClass('paginate-hide');
+                numHiddenFound++;
+                totalShown++;
+
+                if (totalShown == $('ul.schedule-list').children().length) {
+                    $(self).parent().hide();
+                }
+            }
+        });
+    });
+
+</script>

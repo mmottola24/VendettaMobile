@@ -1,9 +1,9 @@
-class TeamStatsController < ApplicationController
+class StatsController < ApplicationController
 
   def index
 
     @title = "Team Stats"
-    @page = "team_stats"
+    @page = "stats"
 
     data = get_hockey_data 'team_stats'
 
@@ -63,5 +63,53 @@ class TeamStatsController < ApplicationController
     end
 
   end
+
+  def league
+    @title = "League Stats"
+    $page = "league_stats"
+
+    type =  params[:type]
+
+    if type.nil? or type.blank?
+      type = 'all'
+    end
+
+    data = get_hockey_data('regular_stats')
+
+    @data = Hash.new
+
+    if type == 'all'
+      @categories = ['pts','g', 'a']
+      @categories.each do |category|
+        @data[category] = list_category data, category, 5
+      end
+
+    else
+      @data[type.to_s] = list_category data, type, 0
+      @categories = [type]
+    end
+
+    @type = type
+
+    respond_to do |format|
+      format.html { render 'pages/league_stats' }
+    end
+  end
+
+  def list_category data, type, limit
+    rows = Array.new
+    data["stats"][type.to_s].each do |key, player|
+      unless player.nil?
+        key = key.to_i
+        if limit == 0 || key <= limit
+          rows[key - 1] = player
+        end
+      end
+    end
+
+    rows
+
+  end
+
 
 end

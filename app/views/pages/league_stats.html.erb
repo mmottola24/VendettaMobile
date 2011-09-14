@@ -1,1 +1,32 @@
-<h1><%= @title %></h1>
+<%
+    unless @data.blank? %>
+
+        <ul data-role="listview" data-inset="true" class="stats-list" data-divider-theme="g">
+
+          <%
+
+             @categories.each do |category|
+                 i = 1
+                 %>
+                 <li data-role="list-divider" role="heading"><h2><%= category %></h2></li>
+                 <%
+                 @data[category].each do |player| %>
+
+                    <%= render :partial => "partials/stat_info", :locals => { :type => category, :i => i, :player => player } %>
+
+                    <%
+                    i = i + 1
+                 end
+
+
+             end
+          %>
+        </ul>
+
+    <% else %>
+
+       <p>No Data Found</p>
+
+    <% end %>
+<p>&nbsp;</p>
+

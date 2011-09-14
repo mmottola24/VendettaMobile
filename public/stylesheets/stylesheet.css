@@ -37,14 +37,31 @@
     background-color: #FCE6E5;
 }
 
+
+.stats-list li.ui-body-c  {
+    padding:  2px 15px;
+    height: 40px;
+}
+
+.stats-list .ui-li-count {
+    position: relative;
+    margin:  0;
+    top: 10px;
+    float: left;
+}
+
+.stats-list li h3,
 .schedule-list li h3 {
     margin:  0 0 6px 0;
 }
+
+.stats-list li,
 ul.schedule-list li {
     padding-top: 0;
     padding-bottom: 0;
 }
 
+.stats-list li p.stats-details,
 ul.schedule-list li p.time-details {
     float: right;
     margin: 0.3em 0;
@@ -57,4 +74,8 @@ ul.schedule-list li p.time-details {
 
 .paginate-hide {
     display: none !important;
+}
+
+#page header span {
+    float: right;
 }

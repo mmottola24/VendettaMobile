@@ -8,11 +8,4 @@ class HomeController < ApplicationController
 
   end
 
-  def league_stats
-    @title = "League Stats"
-    respond_to do |format|
-      format.html
-    end
-  end
-
 end

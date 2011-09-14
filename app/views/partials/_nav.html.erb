@@ -1,5 +1,7 @@
 <section>
 
+    <a name="menu"></a>
+
     <ul data-theme="a" data-role="listview">
 
         <% unless page == 'pages' %>
@@ -18,8 +20,8 @@
             <li><%= link_to "League Schedule", :league_schedule %></li>
         <% end %>
 
-        <% unless page == 'team_stats' %>
-            <li><%= link_to "Team Stats", :team_stats %></li>
+        <% unless page == 'stats' %>
+            <li><%= link_to "Team Stats", :stats %></li>
         <% end %>
 
         <% unless page == 'league_stats' %>

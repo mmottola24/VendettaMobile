@@ -1,32 +1,37 @@
 <%
-    unless @data.blank? %>
 
-        <ul data-role="listview" data-inset="true" class="stats-list" data-divider-theme="g">
-
-          <%
-
-             @categories.each do |category|
-                 i = 1
-                 %>
-                 <li data-role="list-divider" role="heading"><h2><%= category %></h2></li>
-                 <%
-                 @data[category].each do |player| %>
-
-                    <%= render :partial => "partials/stat_info", :locals => { :type => category, :i => i, :player => player } %>
-
-                    <%
-                    i = i + 1
-                 end
+unless @data.blank? %>
 
 
+
+    <%
+
+     @categories.each do |category|
+         i = 1
+         unless @data[category].blank?
+             %>
+            <ul data-role="listview" data-inset="true" class="stats-list" data-divider-theme="g">
+             <li data-role="list-divider" role="heading"><h2><%= convert_label_to_whole_words category %></h2></li>
+             <%
+             @data[category].each do |player| %>
+
+                <%= render :partial => "partials/stat_info", :locals => { :type => category, :i => i, :player => player } %>
+
+                <%
+                i = i + 1
              end
-          %>
-        </ul>
+             %></ul>
+             <a href="league_stats/<%= category %>" data-role="button" data-inline="true">Show More</a>
+            <%
+         else
+            %><p>No Data Found</p><%
+         end
+     end
+    %>
 
-    <% else %>
 
-       <p>No Data Found</p>
+<% else %>
 
-    <% end %>
-<p>&nbsp;</p>
+   <p>No Data Found</p>
 
+<% end %>

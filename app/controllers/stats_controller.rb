@@ -19,18 +19,23 @@ class StatsController < ApplicationController
 
     #get regular season stats
     regular_stats = Hash.new
+
+    player_stats = Array.new
+    goalie_stats = Array.new
+
     unless data['stats']['regular']['player'].nil?
-      player_stats = Array.new
       data['stats']['regular']['player'].each do |key, value|
         player_stats[key.to_i] = value
       end
-      goalie_stats = Array.new
+    end
+    unless data['stats']['regular']['goalie'].nil?
       data['stats']['regular']['goalie'].each do |key, value|
         goalie_stats[key.to_i] = value
       end
-      regular_stats[:player] = player_stats
-      regular_stats[:goalie] = goalie_stats
     end
+
+    regular_stats[:player] = player_stats
+    regular_stats[:goalie] = goalie_stats
 
     #Get playoff stats
     playoff_stats = Hash.new
@@ -65,7 +70,7 @@ class StatsController < ApplicationController
   end
 
   def league
-    @title = "League Stats"
+    @title = "League Leaders"
     $page = "league_stats"
 
     type =  params[:type]
@@ -79,7 +84,7 @@ class StatsController < ApplicationController
     @data = Hash.new
 
     if type == 'all'
-      @categories = ['pts','g', 'a']
+      @categories = ["pts","g", "a", "gaa", "so"]
       @categories.each do |category|
         @data[category] = list_category data, category, 5
       end
@@ -97,17 +102,25 @@ class StatsController < ApplicationController
   end
 
   def list_category data, type, limit
+
     rows = Array.new
-    data["stats"][type.to_s].each do |key, player|
-      unless player.nil?
-        key = key.to_i
-        if limit == 0 || key <= limit
-          rows[key - 1] = player
+
+    unless data["stats"][type].nil?
+      data["stats"][type].each do |key, player|
+        unless player.nil?
+          key = key.to_i
+          if limit == 0 || key <= limit
+            rows[key - 1] = player
+          end
         end
       end
     end
 
-    rows
+    if type == 'gaa'
+      rows.reverse!
+    else
+      rows
+    end
 
   end
 

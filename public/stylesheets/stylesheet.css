@@ -68,6 +68,11 @@ ul.schedule-list li p.time-details {
     text-align: right;
 }
 
+.stats-show-more {
+    position: relative;
+
+}
+
 .ui-li .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li {
     padding-right: 20px;
 }

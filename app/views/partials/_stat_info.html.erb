@@ -1,8 +1,8 @@
 <% unless player.nil? %>
   <li>
     <p class="stats-details">
-        <strong>GP: </strong><%=player['gp'] %><br>
-        <strong><%= type.upcase %>: </strong><%=player['pts'] %><br>
+        <strong>GP: </strong><%= print_games_played player %><br>
+        <strong><%= type.upcase %>: </strong><%=player[type] %><br>
     </p>
 
 

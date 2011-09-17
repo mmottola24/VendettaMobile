@@ -68,6 +68,16 @@ ul.schedule-list li p.time-details {
     text-align: right;
 }
 
+.stats-list-header h2 {
+    float: left;
+    line-height: 28px;
+}
+.stats-list-header span {
+    float: right;
+    line-height: 12px;
+    display: block;
+}
+
 .stats-show-more {
     position: relative;
 
@@ -83,4 +93,8 @@ ul.schedule-list li p.time-details {
 
 #page header span {
     float: right;
+}
+
+.clear {
+    clear: both;
 }

@@ -1,9 +1,6 @@
 <%
 
 unless @data.blank? %>
-
-
-
     <%
 
      @categories.each do |category|
@@ -11,7 +8,17 @@ unless @data.blank? %>
          unless @data[category].blank?
              %>
             <ul data-role="listview" data-inset="true" class="stats-list" data-divider-theme="g">
-             <li data-role="list-divider" role="heading"><h2><%= convert_label_to_whole_words category %></h2></li>
+             <li data-role="list-divider" role="heading" class="stats-list-header">
+               <h2><%= convert_label_to_whole_words category %></h2>
+               <span>
+                   <% unless @categories.length == 1 %>
+                        <a href="/league_stats/<%= category %>" data-role="button" data-inline="true" data-theme="a">Show More</a>
+                   <% else %>
+                        <a href="/league_stats" data-role="button" data-inline="true" data-theme="a">Back to League Leaders</a>
+                   <% end %>
+                 </span>
+               <div class="clear"></div>
+             </li>
              <%
              @data[category].each do |player| %>
 
@@ -21,7 +28,11 @@ unless @data.blank? %>
                 i = i + 1
              end
              %></ul>
-             <a href="league_stats/<%= category %>" data-role="button" data-inline="true">Show More</a>
+
+            <% if @categories.length == 1 %>
+
+            <% end %>
+
             <%
          else
             %><p>No Data Found</p><%

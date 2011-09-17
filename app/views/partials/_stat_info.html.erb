@@ -1,14 +1,16 @@
 <% unless player.nil? %>
   <li>
+
     <p class="stats-details">
         <strong>GP: </strong><%= print_games_played player %><br>
         <strong><%= type.upcase %>: </strong><%=player[type] %><br>
     </p>
 
-
     <span class="ui-li-count ui-btn-up-c ui-btn-corner-all"><%= i %></span>
-    <h3><%= player['player'] %></h3>
-    <p><b><%= player['team'] %></b></p>
+    <span style="float: left;">
+        <h3><%= player['player'] %></h3>
+        <p><b><%= player['team'] %></b></p>
+    </span>
 
   </li>
   <%

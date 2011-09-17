@@ -98,3 +98,20 @@ ul.schedule-list li p.time-details {
 .clear {
     clear: both;
 }
+
+.footer.ui-footer .ui-title {
+    margin: 0;
+    line-height: 25px;
+
+}
+.footer.ui-footer .ui-title span {
+    position: relative;
+    top: -10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.footer img {
+    height: 40px;
+    position: relative;
+    top: 4px;
+}

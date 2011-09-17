@@ -1,0 +1,10 @@
+<% unless @games[0].blank? %>
+
+    <h4 style="margin: 0;">Vendetta's Next Game</h4>
+    <ul data-role="listview" data-inset="true" class="schedule-list" data-divider-theme="g">
+
+        <%= render :partial => "partials/game_info", :locals => { :i => 0, :game => @games[0] } %>
+
+    </ul>
+
+<% end %>

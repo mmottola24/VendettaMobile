@@ -5,10 +5,13 @@
 
 }
 .info-table th {
-    background-color: #9D403D;
-    color: #FCE6E5;
     line-height: 25px;
     font-size: 0.8em;
+
+    background: -moz-linear-gradient(center top , #A20303, #CD0707) repeat scroll 0 0 #CD0707;
+    border: 1px solid #FCE6E5;
+    color: #FFFFFF;
+    text-shadow: 0 0 0 #000000;
 }
 
 .info-table td {
@@ -22,15 +25,22 @@
 }
 
 .info-table tr td {
-    border-bottom: 1px solid #FCE6E5;
+   /* border-bottom: 1px solid #FCE6E5;
     box-shadow: inset 0 1px 3px #fff, inset 0 -1px #FD7B6D, 0 0 6px #FD7B6D;
     -o-box-shadow: inset 0 1px 3px #fff, inset 0 -1px #FD7B6D, 0 0 6px #FD7B6D;
     -webkit-box-shadow: inset 0 1px 3px #fff, inset 0 -1px #FD7B6D, 0 0 6px #FD7B6D;
     -moz-box-shadow: inset 0 1px 3px #fff, inset 0 -1px #FD7B6D, 0 0 6px #FD7B6D;
-    width: 30px;
+
+    width: 30px;*/
+    min-width: 20px;
+
+    background: -moz-linear-gradient(center top , #FDFDFD, #EEEEEE) repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #CCCCCC;
+    color: #444444;
+    text-shadow: 0 1px 1px #F6F6F6;
 }
-.info-table tr.even {
-    background-color: #FDA69D;
+.info-table tr.even td {
+    background: -moz-linear-gradient(center top , #FDFDFD, #FDA69D) repeat scroll 0 0 #FDA69D;
 }
 
 .info-table tr.odd {

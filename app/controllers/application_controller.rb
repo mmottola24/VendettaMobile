@@ -15,7 +15,9 @@ class ApplicationController < ActionController::Base
     dates = Array.new
     unless data.nil?
       data.each do |date, game|
-        dates.push date
+        if check_date date
+          dates.push date
+        end
       end
     end
     return dates
@@ -28,7 +30,9 @@ class ApplicationController < ActionController::Base
       dates.sort!
       dates.each do |day|
         data[day].each do |game|
-          games.push game
+          if check_game game
+            games.push game
+          end
         end
       end
     end
@@ -36,5 +40,34 @@ class ApplicationController < ActionController::Base
     return games
 
   end
+
+  def check_date date
+    date1 = "2011-06-23"
+    time = "8:20 pm"
+    now = Time.parse(date1 + ' ' + time)
+
+    tmp_date = now.strftime("%Y-%m-%d")
+
+    if (date >= tmp_date)
+      return true
+    else
+      return false
+    end
+  end
+
+  def check_game game
+    date = "2011-06-23"
+    time = "10:20 pm"
+
+    now = Time.parse(date + ' ' + time)
+    gametime = Time.parse(game['date'] + ' ' + game['end_time'])
+
+    if (gametime >= now)
+      return true
+    else
+      return false
+    end
+  end
+
 
 end

@@ -10,11 +10,15 @@
              <li data-role="list-divider" role="heading" <%= 'class=paginate-hide' if i >= 5 %>><h2><%= Time.parse(day).strftime("%A %B %d, %G") %></h2></li>
              <%
 
-             @games[day].each do |game| %>
+             @games[day].each do |game|
 
-                <%= render :partial => "partials/game_info", :locals => { :i => i, :game => game } %>
+                if check_game game
+                %>
+
+                    <%= render :partial => "partials/game_info", :locals => { :i => i, :game => game } %>
 
                 <%
+                end
 
              end
 

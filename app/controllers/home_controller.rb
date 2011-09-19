@@ -12,8 +12,6 @@ class HomeController < ApplicationController
 
     @games = (get_games reg_dates, data['regular']) + (get_games playoff_dates, data['playoffs'])
 
-    ap @games
-
     render 'pages/index'
 
   end

@@ -6,9 +6,16 @@
 }
 .info-table th {
     line-height: 25px;
-    font-size: 0.8em;
+    font-size: 0.6em;
 
-    background: -moz-linear-gradient(center top , #A20303, #CD0707) repeat scroll 0 0 #CD0707;
+    background: #a20303; /* Old browsers */
+    background: -moz-linear-gradient(top, #a20303 0%, #cd0707 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a20303), color-stop(100%,#cd0707)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #a20303 0%,#cd0707 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #a20303 0%,#cd0707 100%); /* Opera11.10+ */
+    background: -ms-linear-gradient(top, #a20303 0%,#cd0707 100%); /* IE10+ */
+    background: linear-gradient(top, #a20303 0%,#cd0707 100%); /* W3C */
+
     border: 1px solid #FCE6E5;
     color: #FFFFFF;
     text-shadow: 0 0 0 #000000;
@@ -16,6 +23,7 @@
 
 .info-table td {
     text-align: center;
+    font-size: .7em;
 }
 
 .info-table td:first-child {
@@ -34,13 +42,26 @@
     width: 30px;*/
     min-width: 20px;
 
-    background: -moz-linear-gradient(center top , #FDFDFD, #EEEEEE) repeat scroll 0 0 #EEEEEE;
+    background: #fdfdfd; /* Old browsers */
+    background: -moz-linear-gradient(top, #fdfdfd 0%, #eeeeee 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fdfdfd), color-stop(100%,#eeeeee)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #fdfdfd 0%,#eeeeee 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #fdfdfd 0%,#eeeeee 100%); /* Opera11.10+ */
+    background: -ms-linear-gradient(top, #fdfdfd 0%,#eeeeee 100%); /* IE10+ */
+    background: linear-gradient(top, #fdfdfd 0%,#eeeeee 100%); /* W3C */
+
     border: 1px solid #CCCCCC;
     color: #444444;
     text-shadow: 0 1px 1px #F6F6F6;
 }
 .info-table tr.even td {
-    background: -moz-linear-gradient(center top , #FDFDFD, #FDA69D) repeat scroll 0 0 #FDA69D;
+    background: #fdfdfd; /* Old browsers */
+    background: -moz-linear-gradient(top, #fdfdfd 0%, #fda69d 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fdfdfd), color-stop(100%,#fda69d)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #fdfdfd 0%,#fda69d 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #fdfdfd 0%,#fda69d 100%); /* Opera11.10+ */
+    background: -ms-linear-gradient(top, #fdfdfd 0%,#fda69d 100%); /* IE10+ */
+    background: linear-gradient(top, #fdfdfd 0%,#fda69d 100%); /* W3C */
 }
 
 .info-table tr.odd {
@@ -141,4 +162,8 @@ ul.schedule-list li p.time-details {
 
 #calendar-wrapper .ui-state-active a {
    border: 1px solid #000000;
+}
+
+#calendar-wrapper .ui-datepicker {
+    width: auto;
 }

@@ -6,23 +6,26 @@
          i = 0
          @dates.each do |day|
 
-             %>
-             <li data-role="list-divider" role="heading" <%= 'class=paginate-hide' if i >= 5 %>><h2><%= Time.parse(day).strftime("%A %B %d, %G") %></h2></li>
-             <%
+            if does_date_have_games? day, @games
+                 %>
+                 <li data-role="list-divider" role="heading" <%= 'class=paginate-hide' if i >= 5 %>><h2><%= Time.parse(day).strftime("%A %B %d, %G") %></h2></li>
+                 <%
 
-             @games[day].each do |game|
+                 @games[day].each do |game|
 
-                if check_game game
-                %>
+                    if check_game game
+                    %>
 
-                    <%= render :partial => "partials/game_info", :locals => { :i => i, :game => game } %>
+                        <%= render :partial => "partials/game_info", :locals => { :i => i, :game => game } %>
 
-                <%
-                end
+                    <%
+                    end
 
+                 end
+
+                 i += 1
              end
 
-             i = i + 1
          end
       %>
     </ul>

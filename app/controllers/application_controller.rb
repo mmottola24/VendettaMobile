@@ -42,7 +42,7 @@ class ApplicationController < ActionController::Base
   end
 
   def check_date date
-    date1 = "2011-06-23"
+    date1 = "2011-06-02"
     time = "8:20 pm"
     now = Time.parse(date1 + ' ' + time)
 
@@ -68,6 +68,5 @@ class ApplicationController < ActionController::Base
       return false
     end
   end
-
 
 end

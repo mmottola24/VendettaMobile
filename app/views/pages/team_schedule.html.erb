@@ -22,6 +22,7 @@
 <script>
 
     var totalShown = 5;
+    var num_games = $('ul.schedule-list').children().length;
     $('.show-more').click(function(){
         var self = this;
         var numHiddenFound = 0;
@@ -32,7 +33,7 @@
                 numHiddenFound++;
                 totalShown++;
 
-                if (totalShown == $('ul.schedule-list').children().length) {
+                if (totalShown >= (num_games - 1)) {
                     $(self).parent().hide();
                 }
             }

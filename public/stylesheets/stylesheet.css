@@ -125,3 +125,20 @@ ul.schedule-list li p.time-details {
     position: relative;
     top: 4px;
 }
+
+#calendar-wrapper {
+    display: none;
+    padding:  20px;
+    margin:  0 auto;
+}
+#calendar-wrapper .ui-datepicker {
+    margin:  0 auto;
+}
+
+#calendar-wrapper .ui-state-disabled.ui-datepicker-current-day {
+    opacity: 1;
+}
+
+#calendar-wrapper .ui-state-active a {
+   border: 1px solid #000000;
+}

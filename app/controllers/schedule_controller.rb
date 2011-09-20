@@ -11,11 +11,9 @@ class ScheduleController < ApplicationController
 
     @games = data['regular'].merge(data['playoffs'])
 
-    ap @games
-
     respond_to do |format|
       format.html { render 'pages/league_schedule' }
-      format.json { render :json => data }
+      format.json { render :json => @games }
     end
 
   end
@@ -30,11 +28,13 @@ class ScheduleController < ApplicationController
 
     playoff_dates = get_dates data['playoffs']
 
+    @dates = reg_dates + playoff_dates
+
     @games = (get_games reg_dates, data['regular']) + (get_games playoff_dates, data['playoffs'])
 
     respond_to do |format|
       format.html { render 'pages/team_schedule' }
-      format.json { render :json => data }
+      format.json { render :json => @dates }
     end
 
   end

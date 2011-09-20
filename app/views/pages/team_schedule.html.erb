@@ -1,25 +1,43 @@
 <% unless @games.blank? %>
 
-    <ul data-role="listview" data-inset="true" class="schedule-list">
+    <nav data-role="navbar" class="team-schedule-mode">
+        <ul>
 
-      <%
-         i = 0
-         @games.each do |game| %>
+            <li><a data-theme="a" data-type="list" class="ui-btn-active">List</a></li>
+            <li><a data-theme="a" data-type="calendar">Calendar</a></li>
 
-            <%= render :partial => "partials/game_info", :locals => { :i => i, :game => game } %>
+        </ul>
+    </nav>
 
-            <%
-            i = i + 1
-         end %>
-    </ul>
+    <div id="calendar-wrapper">
+        <div id="calendar"></div>
+    </div>
 
-    <% if @games.length > 5 %>
-        <button class="show-more" data-theme="c">Show More</button>
-    <% end %>
+    <div id="list-wrapper">
+        <ul data-role="listview" data-inset="true" class="schedule-list">
+
+          <%
+             i = 0
+             @games.each do |game| %>
+
+                <%= render :partial => "partials/game_info", :locals => { :i => i, :game => game } %>
+
+                <%
+                i = i + 1
+             end %>
+        </ul>
+
+        <% if @games.length > 5 %>
+            <button class="show-more" data-theme="c">Show More</button>
+        <% end %>
+
+    </div>
 
 <% end %>
 
 <script>
+
+  $('#page').live('pagecreate',function(event){
 
     var totalShown = 5;
     var num_games = $('ul.schedule-list').children().length;
@@ -39,5 +57,39 @@
             }
         });
     });
+
+
+    $('.team-schedule-mode li a').click(function(){
+        var type = $(this).attr('data-type');
+
+        if (type == 'calendar') {
+            $('#calendar-wrapper').show();
+            $('#list-wrapper').hide();
+        } else {
+            $('#list-wrapper').show();
+            $('#calendar-wrapper').hide();
+        }
+
+    });
+
+    $.ajax({
+        url: '/team_schedule.json',
+        dataType: 'json',
+        success: function(dates) {
+           $('#calendar').datepicker({
+                beforeShowDay: function(date) {
+                    var day = $.datepicker.formatDate('yy-mm-dd', date);
+                    if ($.inArray(day,dates) >= 0) {
+                        return [true, "ui-state-active"];
+                    } else {
+                        return [false, ""];
+                    }
+
+                }
+           });
+        }
+    });
+
+  });
 
 </script>

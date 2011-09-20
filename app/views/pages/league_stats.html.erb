@@ -12,9 +12,9 @@ unless @data.blank? %>
                <h2><%= convert_label_to_whole_words category %></h2>
                <span>
                    <% unless @categories.length == 1 %>
-                        <a href="/league_stats/<%= category %>" data-role="button" data-inline="true" data-theme="a">Show More</a>
+                        <a href="/league_stats/<%= category %>" data-role="button" data-inline="true" data-theme="a">More</a>
                    <% else %>
-                        <a href="/league_stats" data-role="button" data-inline="true" data-theme="a">Back to League Leaders</a>
+                        <a href="/league_stats" data-role="button" data-inline="true" data-theme="a">Back</a>
                    <% end %>
                  </span>
                <div class="clear"></div>

@@ -10,7 +10,7 @@ module StatsHelper
       when 'a'
         return 'Assists'
       when 'gaa'
-        return 'Goals Against Average'
+        return 'Goals Against Avg'
       when 'so'
         return 'Shutouts'
       else

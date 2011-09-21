@@ -6,7 +6,6 @@
 }
 .info-table th {
     line-height: 25px;
-    font-size: 0.6em;
 
     background: #a20303; /* Old browsers */
     background: -moz-linear-gradient(top, #a20303 0%, #cd0707 100%); /* FF3.6+ */
@@ -23,7 +22,6 @@
 
 .info-table td {
     text-align: center;
-    font-size: .7em;
 }
 
 .info-table td:first-child {
@@ -33,13 +31,7 @@
 }
 
 .info-table tr td {
-   /* border-bottom: 1px solid #FCE6E5;
-    box-shadow: inset 0 1px 3px #fff, inset 0 -1px #FD7B6D, 0 0 6px #FD7B6D;
-    -o-box-shadow: inset 0 1px 3px #fff, inset 0 -1px #FD7B6D, 0 0 6px #FD7B6D;
-    -webkit-box-shadow: inset 0 1px 3px #fff, inset 0 -1px #FD7B6D, 0 0 6px #FD7B6D;
-    -moz-box-shadow: inset 0 1px 3px #fff, inset 0 -1px #FD7B6D, 0 0 6px #FD7B6D;
 
-    width: 30px;*/
     min-width: 20px;
 
     background: #fdfdfd; /* Old browsers */
@@ -166,4 +158,32 @@ ul.schedule-list li p.time-details {
 
 #calendar-wrapper .ui-datepicker {
     width: auto;
+}
+
+.ui-header .ui-title {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 400px) {
+    .info-table th {
+        font-size: 0.6em;
+    }
+    .info-table td {
+        font-size: .7em;
+    }
+}
+
+@media only screen and (max-width : 360px) {
+    .schedule-list li h3 {
+        font-size: 1em;
+    }
+}
+
+@media only screen and (max-width : 320px) {
+    .schedule-list li h3 {
+        font-size: .9em;
+    }
 }

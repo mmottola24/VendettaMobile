@@ -42,9 +42,8 @@ class ApplicationController < ActionController::Base
   end
 
   def check_date date
-    date1 = "2011-06-02"
-    time = "8:20 pm"
-    now = Time.parse(date1 + ' ' + time)
+
+    now = Time.now
 
     tmp_date = now.strftime("%Y-%m-%d")
 
@@ -56,10 +55,8 @@ class ApplicationController < ActionController::Base
   end
 
   def check_game game
-    date = "2011-06-23"
-    time = "10:20 pm"
 
-    now = Time.parse(date + ' ' + time)
+    now = Time.now
     gametime = Time.parse(game['date'] + ' ' + game['end_time'])
 
     if (gametime >= now)

@@ -9,7 +9,11 @@ class ScheduleController < ApplicationController
 
     @dates = dates.sort
 
-    @games = data['regular'].merge(data['playoffs'])
+    if data['playoffs'].nil?
+      @games = data['regular']
+    else
+      @games = data['regular'].merge(data['playoffs'])
+    end
 
     respond_to do |format|
       format.html { render 'pages/league_schedule' }

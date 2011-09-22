@@ -76,12 +76,12 @@
 .stats-list li h3,
 .schedule-list li h3 {
     margin:  0 0 6px 0;
+    overflow: hidden;
 }
 
 .stats-list li,
-ul.schedule-list li {
-    padding-top: 0;
-    padding-bottom: 0;
+.ui-content ul.schedule-list li {
+
 }
 
 .stats-list li p.stats-details,
@@ -177,13 +177,22 @@ ul.schedule-list li p.time-details {
 }
 
 @media only screen and (max-width : 360px) {
-    .schedule-list li h3 {
-        font-size: 1em;
+    .ui-content .schedule-list li h3 {
+        font-size: .9em;
+    }
+    .ui-content .schedule-list li {
+        padding-right: 3px;
+        padding-left: 3px;
     }
 }
 
 @media only screen and (max-width : 320px) {
-    .schedule-list li h3 {
-        font-size: .9em;
+    .ui-content .schedule-list li h3 {
+        font-size: .7em;
     }
+    .ui-content .schedule-list li {
+        padding-right: 3px;
+        padding-left: 3px;
+    }
+
 }

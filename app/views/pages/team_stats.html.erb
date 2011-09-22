@@ -4,10 +4,12 @@
         <nav data-role="navbar" class="season_toggle">
             <ul>
                 <%
-                for item in @seasons
-                    %>
-                    <li><a data-theme="a" data-season-type="<%= item %>" <%= 'class=ui-btn-active' if item == @current_season %>><%= item.humanize %></a></li>
-                    <%
+                unless @seasons.length <= 1
+                    for item in @seasons
+                        %>
+                        <li><a data-theme="a" data-season-type="<%= item %>" <%= 'class=ui-btn-active' if item == @current_season %>><%= item.humanize %></a></li>
+                        <%
+                    end
                 end
                 %>
             </ul>
@@ -15,15 +17,19 @@
 
         <section class="data-list">
 
-            <article class="regular <%= ' data-list-active' if @current_season == 'regular' %>">
-                <%= render :partial => "partials/player_stats", :locals => { :data => @regular_stats[:player], :season => "regular" } %>
-                <%= render :partial => "partials/goalie_stats", :locals => { :data => @regular_stats[:goalie], :season => "regular" } %>
-            </article>
+            <% unless @regular_stats.nil? or @regular_stats[:player].nil? or @regular_stats[:goalie].nil? %>
+                <article class="regular <%= ' data-list-active' if @current_season == 'regular' %>">
+                    <%= render :partial => "partials/player_stats", :locals => { :data => @regular_stats[:player], :season => "regular" } %>
+                    <%= render :partial => "partials/goalie_stats", :locals => { :data => @regular_stats[:goalie], :season => "regular" } %>
+                </article>
+            <% end %>
 
-            <article class="playoffs <%= ' data-list-active' if @current_season == 'playoffs' %>">
-                <%= render :partial => "partials/player_stats", :locals => { :data => @playoff_stats[:player], :season => "playoffs" } %>
-                <%= render :partial => "partials/goalie_stats", :locals => { :data => @playoff_stats[:goalie], :season => "playoffs" } %>
-            </article>
+            <% unless @playoff_stats.nil? or @playoff_stats[:player].nil? or @playoff_stats[:goalie].nil? %>
+                <article class="playoffs <%= ' data-list-active' if @current_season == 'playoffs' %>">
+                    <%= render :partial => "partials/player_stats", :locals => { :data => @playoff_stats[:player], :season => "playoffs" } %>
+                    <%= render :partial => "partials/goalie_stats", :locals => { :data => @playoff_stats[:goalie], :season => "playoffs" } %>
+                </article>
+            <% end %>
 
         </section>
 

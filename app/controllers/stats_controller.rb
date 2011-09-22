@@ -23,14 +23,16 @@ class StatsController < ApplicationController
     player_stats = Array.new
     goalie_stats = Array.new
 
-    unless data['stats']['regular']['player'].nil?
-      data['stats']['regular']['player'].each do |key, value|
-        player_stats[key.to_i] = value
+    unless data['stats']['regular'].nil?
+      unless data['stats']['regular']['player'].nil?
+        data['stats']['regular']['player'].each do |key, value|
+          player_stats[key.to_i] = value
+        end
       end
-    end
-    unless data['stats']['regular']['goalie'].nil?
-      data['stats']['regular']['goalie'].each do |key, value|
-        goalie_stats[key.to_i] = value
+      unless data['stats']['regular']['goalie'].nil?
+        data['stats']['regular']['goalie'].each do |key, value|
+          goalie_stats[key.to_i] = value
+        end
       end
     end
 
@@ -39,17 +41,19 @@ class StatsController < ApplicationController
 
     #Get playoff stats
     playoff_stats = Hash.new
-    unless data['stats']['playoffs']['player'].nil?
-      player_stats = Array.new
-      data['stats']['playoffs']['player'].each do |key, value|
-        player_stats[key.to_i] = value
+    unless data['stats']['playoffs'].nil?
+      unless data['stats']['playoffs']['player'].nil?
+        player_stats = Array.new
+        data['stats']['playoffs']['player'].each do |key, value|
+          player_stats[key.to_i] = value
+        end
+        goalie_stats = Array.new
+        data['stats']['playoffs']['goalie'].each do |key, value|
+          goalie_stats[key.to_i] = value
+        end
+        playoff_stats[:player] = player_stats
+        playoff_stats[:goalie] = goalie_stats
       end
-      goalie_stats = Array.new
-      data['stats']['playoffs']['goalie'].each do |key, value|
-        goalie_stats[key.to_i] = value
-      end
-      playoff_stats[:player] = player_stats
-      playoff_stats[:goalie] = goalie_stats
     end
 
     @seasons = seasons

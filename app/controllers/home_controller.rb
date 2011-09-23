@@ -2,7 +2,7 @@ class HomeController < ApplicationController
 
   def index
     @title = "Vendetta"
-    @page = "pages"
+    @page = "home"
 
     data = get_hockey_data 'vendetta_schedule'
 

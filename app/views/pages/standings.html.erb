@@ -4,10 +4,12 @@
         <nav data-role="navbar" class="season_toggle">
             <ul>
                 <%
-                for item in @seasons
-                    %>
-                    <li><a data-theme="a" data-season-type="<%= item %>" <%= 'class=ui-btn-active' if item == @current_season %>><%= item.humanize %></a></li>
-                    <%
+                unless @seasons.length <= 1
+                    for item in @seasons
+                        %>
+                        <li><a data-theme="a" data-season-type="<%= item %>" <%= 'class=ui-btn-active' if item == @current_season %>><%= item.humanize %></a></li>
+                        <%
+                    end
                 end
                 %>
             </ul>

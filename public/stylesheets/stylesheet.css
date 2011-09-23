@@ -5,7 +5,8 @@
 
 }
 .info-table th {
-    line-height: 25px;
+    padding-top: 4px;
+    padding-bottom: 4px;
 
     background: #a20303; /* Old browsers */
     background: -moz-linear-gradient(top, #a20303 0%, #cd0707 100%); /* FF3.6+ */
@@ -80,8 +81,9 @@
 }
 
 .stats-list li,
-.ui-content ul.schedule-list li {
-
+.ui-content ul.schedule-list li.ui-li-divider {
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .stats-list li p.stats-details,
@@ -166,25 +168,6 @@ ul.schedule-list li p.time-details {
 }
 
 
-/* Smartphones (portrait) ----------- */
-@media only screen and (max-width : 400px) {
-    .info-table th {
-        font-size: 0.6em;
-    }
-    .info-table td {
-        font-size: .7em;
-    }
-}
-
-@media only screen and (max-width : 360px) {
-    .ui-content .schedule-list li h3 {
-        font-size: .9em;
-    }
-    .ui-content .schedule-list li {
-        padding-right: 3px;
-        padding-left: 3px;
-    }
-}
 
 @media only screen and (max-width : 320px) {
     .ui-content .schedule-list li h3 {
@@ -195,4 +178,21 @@ ul.schedule-list li p.time-details {
         padding-left: 3px;
     }
 
+}
+@media only screen and (max-width : 360px) {
+    .ui-content .schedule-list li h3 {
+        font-size: .82em;
+    }
+    .ui-content .schedule-list li {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+}
+@media only screen and (max-width : 400px) {
+    .info-table th {
+        font-size: 0.6em;
+    }
+    .info-table td {
+        font-size: .7em;
+    }
 }

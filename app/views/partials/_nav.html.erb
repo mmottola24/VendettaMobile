@@ -12,6 +12,10 @@
             <li><%= link_to "Standings", :standings  %></li>
         <% end %>
 
+        <% unless page == 'results' %>
+            <li><%= link_to "Scores", :results  %></li>
+        <% end %>
+
         <% unless page == 'team_schedule' %>
             <li><%= link_to "Team Schedule", :team_schedule  %></li>
         <% end %>

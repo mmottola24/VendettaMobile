@@ -1,0 +1,8 @@
+<% unless game.nil? %>
+  <li>
+    <p><%= game['away_team'] %>: <span><%= game['away_score'] %></span></p>
+    <p><%= game['home_team'] %>: <span><%= game['home_score'] %></span></p>
+  </li>
+  <%
+end
+%>

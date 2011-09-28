@@ -168,6 +168,26 @@ ul.schedule-list li p.time-details {
 }
 
 
+#page .results-list li.ui-li-divider {
+    padding:  5px;
+}
+
+#page .results-list li.ui-li-divider span {
+    font-size: .8em;
+}
+#page .results-list li {
+    padding-bottom: 0;
+    margin: 0;
+}
+#page .results-list li p {
+    margin-bottom: 0;
+    padding-bottom: 3px;
+    font-size: 1.2em;
+}
+#page .results-list li p span {
+    font-weight: bold;
+}
+
 
 @media only screen and (max-width : 320px) {
     .ui-content .schedule-list li h3 {

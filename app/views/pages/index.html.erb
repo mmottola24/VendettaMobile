@@ -8,3 +8,31 @@
     </ul>
 
 <% end %>
+
+<% unless @results.nil? or @results.blank? %>
+    <h4>Results Around League</h4>
+
+    <ul data-role="listview" data-inset="true" class="results-list" data-divider-theme="g">
+
+      <%
+        limit = 1
+        i = 0
+        @results.each do |date, games|
+
+            if i < limit %>
+
+            <li data-role="list-divider" role="heading"><span><%= Time.parse(date).strftime("%A %B %d, %G") %></span></li>
+
+            <% games.each do |game| %>
+
+                <%= render :partial => "partials/game_results", :locals => { :game => game } %>
+
+            <% end
+            end
+            i += 1
+            %>
+
+      <% end %>
+
+    </ul>
+<% end %>

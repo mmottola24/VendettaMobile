@@ -74,6 +74,22 @@
     float: left;
 }
 
+.stats-list,
+.schedule-list {
+    margin-top: 2px !important;
+}
+
+.stats-list li,
+.schedule-list li {
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+}
+
+.stats-list li p,
+.schedule-list li p {
+    margin-bottom: 0;
+}
+
 .stats-list li h3,
 .schedule-list li h3 {
     margin:  0 0 6px 0;
@@ -179,13 +195,34 @@ ul.schedule-list li p.time-details {
     padding-bottom: 0;
     margin: 0;
 }
-#page .results-list li p {
+
+#page .results-list li span {
     margin-bottom: 0;
     padding-bottom: 3px;
     font-size: 1.2em;
 }
-#page .results-list li p span {
+#page .results-list li span p:last-child {
+    margin-bottom: 0;
+}
+
+#page .results-list li span.game-teams,
+#page .results-list li span.game-score {
+    float: left;
+}
+#page .results-list li span.game-score {
+    float: right;
     font-weight: bold;
+    margin-left: 10px;
+    font-size: 1.2em;
+}
+#page .results-list li span.game-score p {
+     font-weight: bold;
+
+}
+#page ul.results-list-floating {
+    float: left;
+    margin-right: 15px;
+    margin-top: 5px;
 }
 
 
@@ -207,6 +244,11 @@ ul.schedule-list li p.time-details {
         padding-right: 10px;
         padding-left: 10px;
     }
+
+    .time-details {
+        position: relative;
+        top: -3px;
+    }
 }
 @media only screen and (max-width : 400px) {
     .info-table th {
@@ -215,4 +257,10 @@ ul.schedule-list li p.time-details {
     .info-table td {
         font-size: .7em;
     }
+
+    .only-landscrape {
+        display: none;
+    }
+
+
 }

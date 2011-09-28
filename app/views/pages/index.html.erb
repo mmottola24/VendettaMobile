@@ -1,6 +1,6 @@
 <% unless @games[0].blank? %>
 
-    <h4 style="margin: 0;">Vendetta's Next Game</h4>
+    <h4 style="margin: 0;">Next Game</h4>
     <ul data-role="listview" data-inset="true" class="schedule-list" data-divider-theme="g">
 
         <%= render :partial => "partials/game_info", :locals => { :i => 0, :game => @games[0] } %>
@@ -10,29 +10,33 @@
 <% end %>
 
 <% unless @results.nil? or @results.blank? %>
-    <h4>Results Around League</h4>
+    <h4 style="margin: 0;">Around the League</h4>
 
-    <ul data-role="listview" data-inset="true" class="results-list" data-divider-theme="g">
 
       <%
-        limit = 1
+        limit = 2
         i = 0
-        @results.each do |date, games|
+        @dates.each do |date|
 
             if i < limit %>
+                <ul data-role="listview" data-inset="true" class="results-list results-list-floating <%= 'only-landscrape' if i > 0 %>"  data-divider-theme="g">
+                <li data-role="list-divider" role="heading"><span><%= Time.parse(date).strftime("%A %B %d, %G") %></span></li>
 
-            <li data-role="list-divider" role="heading"><span><%= Time.parse(date).strftime("%A %B %d, %G") %></span></li>
+                <% @results[date].each do |game| %>
 
-            <% games.each do |game| %>
+                    <%= render :partial => "partials/game_results", :locals => { :game => game } %>
 
-                <%= render :partial => "partials/game_results", :locals => { :game => game } %>
-
-            <% end
+                <% end
+            else
+                break
             end
             i += 1
             %>
 
+            </ul>
+
       <% end %>
 
-    </ul>
+    <div style="clear: both;"></div>
+
 <% end %>

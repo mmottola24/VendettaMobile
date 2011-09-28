@@ -149,7 +149,7 @@ class TestRDocRIStore < MiniTest::Unit::TestCase
     @s.type = :site
     assert_equal "ruby site", @s.friendly_path
 
-    @s.type = :pages
+    @s.type = :home
     assert_equal "~/.ri", @s.friendly_path
 
     @s.type = :gem

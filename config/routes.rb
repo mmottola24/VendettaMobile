@@ -6,10 +6,11 @@ VendettaMobile::Application.routes.draw do
   match "standings" => "standings#index"
   match "team_schedule" => "schedule#team#team_schedule"
   match "league_schedule" => "schedule#index"
-    match "stats" => "stats#index"
-    match "league_stats" => "stats#league"
+  match "stats" => "stats#index"
+  match "league_stats" => "stats#league"
 
   match "league_stats/(:type)" => "stats#league"
+  match "results" => "results#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

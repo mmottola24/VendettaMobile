@@ -1,0 +1,27 @@
+<%
+   unless @results.nil? or @results.blank? %>
+
+      <ul data-role="listview" data-inset="true" class="results-list" data-divider-theme="g">
+
+      <%
+        limit = 45
+        i = 0
+        @dates.each do |date|
+
+            if i < limit %>
+
+            <li data-role="list-divider" role="heading"><span><%= Time.parse(date).strftime("%A %B %d, %G") %></span></li>
+
+            <% @results[date].each do |game| %>
+
+                <%= render :partial => "partials/game_results", :locals => { :game => game } %>
+
+            <% end
+            end
+            i += 1
+            %>
+
+      <% end %>
+
+    </ul>
+<% end %>

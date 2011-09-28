@@ -148,7 +148,7 @@ To see the default directories ri will search, run:
 
     #{opt.program_name} --list-doc-dirs
 
-Specifying the --system, --site, --pages, --gems or --doc-dir options will
+Specifying the --system, --site, --home, --gems or --doc-dir options will
 limit ri to searching only the specified directories.
 
 Options may also be set in the 'RI' environment variable.
@@ -274,7 +274,7 @@ Options may also be set in the 'RI' environment variable.
 
       opt.separator nil
 
-      opt.on("--[no-]pages",
+      opt.on("--[no-]home",
              "Include documentation stored in ~/.rdoc.",
              "Defaults to true.") do |value|
         options[:use_home] = value

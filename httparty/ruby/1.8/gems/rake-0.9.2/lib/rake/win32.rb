@@ -6,7 +6,7 @@ module Rake
   # will be placed here to collect that knowledge in one spot.
   module Win32
 
-    # Error indicating a problem in locating the pages directory on a
+    # Error indicating a problem in locating the home directory on a
     # Win32 system.
     class Win32HomeError < RuntimeError
     end
@@ -40,7 +40,7 @@ module Rake
 
         win32_shared_path ||= ENV['APPDATA']
         win32_shared_path ||= ENV['USERPROFILE']
-        raise Win32HomeError, "Unable to determine pages path environment variable." if
+        raise Win32HomeError, "Unable to determine home path environment variable." if
           win32_shared_path.nil? or win32_shared_path.empty?
         normalize(File.join(win32_shared_path, 'Rake'))
       end

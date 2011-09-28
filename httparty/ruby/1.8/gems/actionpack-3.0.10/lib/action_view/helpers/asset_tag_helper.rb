@@ -535,7 +535,7 @@ module ActionView
       # The helper accepts an additional options hash where you can override "rel" and "type".
       #
       # For example, Mobile Safari looks for a different LINK tag, pointing to an image that
-      # will be used if you add the page to the pages screen of an iPod Touch, iPhone, or iPad.
+      # will be used if you add the page to the home screen of an iPod Touch, iPhone, or iPad.
       # The following call would generate such a tag:
       #
       #   <%= favicon_link_tag 'mb-icon.png', :rel => 'apple-touch-icon', :type => 'image/png' %>

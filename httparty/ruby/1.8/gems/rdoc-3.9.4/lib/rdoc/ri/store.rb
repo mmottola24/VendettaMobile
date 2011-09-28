@@ -140,7 +140,7 @@ class RDoc::RI::Store
       sep = Regexp.union(*['/', File::ALT_SEPARATOR].compact)
       @path =~ /#{sep}doc#{sep}(.*?)#{sep}ri$/
       "gem #{$1}"
-    when :pages   then '~/.ri'
+    when :home   then '~/.ri'
     when :site   then 'ruby site'
     when :system then 'ruby core'
     else @path

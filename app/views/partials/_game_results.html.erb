@@ -1,7 +1,8 @@
 <% unless game.nil? %>
   <li>
-    <p><%= game['away_team'] %>: <span><%= game['away_score'] %></span></p>
-    <p><%= game['home_team'] %>: <span><%= game['home_score'] %></span></p>
+    <span class="game-teams"><p><%= game['away_team'] %></p><p><%= game['home_team'] %></p></span>
+    <span class="game-score"><p><%= game['away_score'] %></p><p><%= game['home_score'] %></p></span>
+    <div style="clear: both;"></div>
   </li>
   <%
 end

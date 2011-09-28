@@ -196,8 +196,8 @@ class ConfigTable
     end
 
     [
-      ExecItem.new('installdirs', 'std/site/pages',
-                   'std: install under libruby; site: install under site_ruby; pages: install under $HOME')\
+      ExecItem.new('installdirs', 'std/site/home',
+                   'std: install under libruby; site: install under site_ruby; home: install under $HOME')\
           {|val, table|
             case val
             when 'std'
@@ -206,7 +206,7 @@ class ConfigTable
             when 'site'
               table['rbdir'] = '$siterubyver'
               table['sodir'] = '$siterubyverarch'
-            when 'pages'
+            when 'home'
               setup_rb_error '$HOME was not set' unless ENV['HOME']
               table['prefix'] = ENV['HOME']
               table['rbdir'] = '$libdir/ruby'

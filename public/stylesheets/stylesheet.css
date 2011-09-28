@@ -74,12 +74,11 @@
     float: left;
 }
 
-.stats-list,
-.schedule-list {
+#home-page .stats-list,
+#home-page .schedule-list {
     margin-top: 2px !important;
 }
 
-.stats-list li,
 .schedule-list li {
     padding-top: 4px !important;
     padding-bottom: 4px !important;
@@ -88,6 +87,19 @@
 .stats-list li p,
 .schedule-list li p {
     margin-bottom: 0;
+}
+
+.schedule-list li h2 {
+    margin:  0;
+}
+
+.stats-list li h2 {
+    margin-bottom: 6px;
+    margin-top: 6px;
+}
+.stats-list li span a {
+    margin-bottom: 0;
+    margin-top: 5px;
 }
 
 .stats-list li h3,

@@ -240,7 +240,7 @@ ul.schedule-list li p.time-details {
 
 @media only screen and (max-width : 320px) {
     .ui-content .schedule-list li h3 {
-        font-size: .7em;
+        font-size: .85em;
     }
     .ui-content .schedule-list li {
         padding-right: 3px;
@@ -250,17 +250,13 @@ ul.schedule-list li p.time-details {
 }
 @media only screen and (max-width : 360px) {
     .ui-content .schedule-list li h3 {
-        font-size: .82em;
+
     }
     .ui-content .schedule-list li {
         padding-right: 10px;
         padding-left: 10px;
     }
 
-    .time-details {
-        position: relative;
-        top: -3px;
-    }
 }
 @media only screen and (max-width : 400px) {
     .info-table th {
